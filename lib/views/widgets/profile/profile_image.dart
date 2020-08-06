@@ -10,15 +10,34 @@ class ProfileImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(height: 100, width: 100),
-          SizedBox(
-            height: 200,
-            width: 200,
-            child: ClipOval(
-              child: Image.asset('assets/face.jpg', fit: BoxFit.cover),
-            ),
+          Stack(
+            children: <Widget>[
+              Positioned(
+                top: 0,
+                child: Container(
+                  color: Colors.white,
+                  child: SizedBox(height: 150, width: 1000),
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                child: Container(
+                  color: Colors.blue,
+                  child: SizedBox(height: 150, width: 1000),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 50, 0, 50),
+                child: SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: ClipOval(
+                    child: Image.asset('assets/face.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 100, width: 100),
         ],
       ),
     );
